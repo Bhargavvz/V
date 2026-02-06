@@ -1,0 +1,226 @@
+/* Kiss Day - Romantic & Playful */
+
+/* Floating Lips */
+.floating-lips {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-lip {
+    position: absolute;
+    font-size: 1.3rem;
+    bottom: -50px;
+    opacity: 0;
+    animation: floatUpLip 15s ease-in-out infinite;
+}
+
+@keyframes floatUpLip {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Hearts Layer */
+.hearts-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.click-heart {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 77, 109, 0.5));
+}
+
+/* Container */
+.kiss-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-lg) 0;
+    width: 100%;
+    min-height: 500px;
+    cursor: pointer;
+}
+
+/* Intro */
+.kiss-intro {
+    margin-bottom: var(--space-2xl);
+}
+
+.kiss-intro p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+}
+
+/* Main Kiss */
+.main-kiss {
+    position: relative;
+    margin-bottom: var(--space-2xl);
+}
+
+.kiss-emoji {
+    font-size: 8rem;
+    display: block;
+    filter: drop-shadow(0 10px 30px rgba(255, 77, 109, 0.4));
+    animation: float 4s ease-in-out infinite;
+}
+
+.kiss-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 77, 109, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+/* Message */
+.kiss-message {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-xl);
+    max-width: 350px;
+    margin-bottom: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.kiss-message p {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Counter */
+.kiss-counter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-xl);
+}
+
+.counter-emoji {
+    font-size: 1.3rem;
+}
+
+.counter-value {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.counter-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Secret Button */
+.secret-note-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    color: white;
+    font-size: 1rem;
+}
+
+.secret-note-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.secret-note-btn span:first-child {
+    font-size: 1.3rem;
+}
+
+/* Secret Overlay */
+.secret-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: var(--space-lg);
+}
+
+.secret-card {
+    background: linear-gradient(165deg, #fffef9, #fff5eb);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    max-width: 380px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+.secret-emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-lg);
+    animation: float 3s ease-in-out infinite;
+}
+
+.secret-content {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 2;
+    color: var(--dark);
+    white-space: pre-line;
+}
+
+.close-secret {
+    margin-top: var(--space-xl);
+    padding: var(--space-sm) var(--space-xl);
+    background: var(--gradient-love);
+    color: white;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .kiss-emoji {
+        font-size: 5rem;
+    }
+
+    .kiss-message {
+        padding: var(--space-md);
+    }
+}

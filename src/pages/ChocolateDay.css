@@ -1,0 +1,294 @@
+/* Chocolate Day - Warm & Sweet */
+
+/* Elegant Background */
+.chocolate-bg-glow {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.chocolate-glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    animation: chocoOrbDrift 18s ease-in-out infinite;
+}
+
+.chocolate-glow-orb:nth-child(1) {
+    width: 450px;
+    height: 450px;
+    background: rgba(255, 200, 150, 0.4);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.chocolate-glow-orb:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    background: rgba(210, 150, 100, 0.3);
+    bottom: 10%;
+    left: -150px;
+    animation-delay: -6s;
+}
+
+.chocolate-glow-orb:nth-child(3) {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 220, 180, 0.4);
+    top: 40%;
+    left: 50%;
+    animation-delay: -12s;
+}
+
+@keyframes chocoOrbDrift {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -25px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-25px, 35px) scale(0.95);
+    }
+}
+
+/* Warm gradient overlay */
+.chocolate-warm-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(ellipse at 50% 100%, rgba(139, 90, 43, 0.1) 0%, transparent 50%);
+}
+
+/* Container */
+.chocolate-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-lg) 0;
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Intro */
+.chocolate-intro {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.chocolate-intro p {
+    font-size: 1.1rem;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.chocolate-intro .intro-sub {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-top: var(--space-xs);
+}
+
+/* Chocolate Box */
+.chocolate-box {
+    background: linear-gradient(145deg, #8b5a2b, #6b4423);
+    padding: var(--space-xl);
+    border-radius: var(--radius-2xl);
+    box-shadow:
+        0 20px 60px rgba(92, 61, 46, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    width: 100%;
+}
+
+.box-ribbon {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(145deg, #c9184a, #a4133c);
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 15px rgba(201, 24, 74, 0.4);
+}
+
+.box-ribbon span {
+    font-size: 1.5rem;
+}
+
+/* Chocolates Grid */
+.chocolates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.chocolate-item {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #5c3d2e, #4a3025);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-romantic);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+}
+
+.chocolate-item:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.chocolate-item.opened {
+    background: linear-gradient(145deg, #d4a574, #c49464);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.chocolate-item.secret {
+    border: 2px dashed rgba(255, 200, 87, 0.5);
+}
+
+.chocolate-item.secret.opened {
+    border: 2px solid var(--gold);
+    background: linear-gradient(145deg, #f7d794, #e6c078);
+}
+
+.chocolate-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chocolate-emoji {
+    font-size: 2rem;
+}
+
+.lock-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+    opacity: 0.7;
+}
+
+.chocolate-title {
+    font-size: 0.7rem;
+    color: var(--dark);
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Progress */
+.progress-text {
+    margin-top: var(--space-xl);
+    font-size: 0.9rem;
+    color: var(--dark);
+    opacity: 0.7;
+}
+
+/* Memory Overlay */
+.memory-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(92, 61, 46, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: var(--space-lg);
+}
+
+.memory-card {
+    background: linear-gradient(165deg, #fffef9, #fff5eb);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+}
+
+.memory-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--space-md);
+    animation: float 3s ease-in-out infinite;
+}
+
+.memory-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--chocolate-deep);
+    margin-bottom: var(--space-lg);
+}
+
+.memory-text {
+    font-size: 1.05rem;
+    color: var(--dark);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* Secret Prompt */
+.secret-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.secret-prompt p {
+    font-size: 1rem;
+    color: var(--dark);
+    opacity: 0.7;
+}
+
+.unlock-secret-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--gradient-gold);
+    color: var(--dark);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 20px rgba(255, 200, 87, 0.4);
+}
+
+.unlock-secret-btn:hover {
+    box-shadow: 0 6px 25px rgba(255, 200, 87, 0.5);
+}
+
+.close-memory-btn {
+    margin-top: var(--space-xl);
+    padding: var(--space-sm) var(--space-xl);
+    background: var(--gradient-chocolate);
+    color: white;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .chocolates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .chocolate-box {
+        padding: var(--space-lg);
+    }
+}

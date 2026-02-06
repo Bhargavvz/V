@@ -1,0 +1,332 @@
+/* Premium Day Card */
+.day-card {
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-romantic);
+    background: white;
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.day-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-romantic);
+}
+
+.day-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.day-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Background Gradient */
+.card-gradient {
+    position: absolute;
+    inset: 0;
+    opacity: 0.15;
+    transition: opacity var(--duration-normal) var(--ease-romantic);
+}
+
+.day-card:hover .card-gradient {
+    opacity: 0.25;
+}
+
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+}
+
+/* Emoji Container */
+.card-emoji-container {
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+.card-emoji {
+    font-size: 3.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    transition: transform var(--duration-normal) var(--ease-bounce);
+}
+
+.day-card:hover .card-emoji {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.card-emoji-glow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255, 143, 171, 0.4) 0%, transparent 70%);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-romantic);
+}
+
+.day-card:hover .card-emoji-glow {
+    opacity: 1;
+}
+
+/* Card Header */
+.card-header {
+    margin-bottom: var(--space-md);
+}
+
+.card-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: var(--space-xs);
+    letter-spacing: -0.02em;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: var(--dark-soft);
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Card Tagline */
+.card-tagline {
+    font-family: var(--font-script);
+    font-size: 1.1rem;
+    color: var(--dark-soft);
+    opacity: 0.8;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* Card Footer */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Lock Status */
+.lock-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.lock-status.locked {
+    color: var(--rose-dark);
+}
+
+.lock-status.unlocked {
+    color: #10b981;
+}
+
+.lock-icon {
+    font-size: 1rem;
+}
+
+/* Enter Button */
+.enter-button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--gradient-love);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(255, 77, 109, 0.3);
+    transition: all var(--duration-normal) var(--ease-romantic);
+}
+
+.enter-button:hover {
+    box-shadow: 0 4px 16px rgba(255, 77, 109, 0.5);
+    transform: translateX(2px);
+}
+
+.enter-button svg {
+    transition: transform var(--duration-normal) var(--ease-romantic);
+}
+
+.enter-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Unlock Prompt */
+.unlock-prompt {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(135deg, rgba(255, 143, 171, 0.15) 0%, rgba(255, 107, 157, 0.2) 100%);
+    color: var(--rose-dark);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 143, 171, 0.3);
+    transition: all var(--duration-normal) var(--ease-romantic);
+}
+
+.unlock-prompt:hover {
+    background: linear-gradient(135deg, rgba(255, 143, 171, 0.25) 0%, rgba(255, 107, 157, 0.3) 100%);
+    border-color: rgba(255, 143, 171, 0.5);
+}
+
+/* Shimmer Effect */
+.card-shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 100%);
+    transition: left 0.8s ease;
+}
+
+.day-card:hover .card-shimmer {
+    left: 100%;
+}
+
+/* Sparkle Decorations */
+.card-sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.card-sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--gold-shine);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity var(--duration-slow) ease;
+}
+
+.day-card:hover .card-sparkle {
+    opacity: 1;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.card-sparkle:nth-child(1) {
+    top: 20%;
+    right: 15%;
+    animation-delay: 0s;
+}
+
+.card-sparkle:nth-child(2) {
+    top: 60%;
+    right: 25%;
+    animation-delay: 0.3s;
+}
+
+.card-sparkle:nth-child(3) {
+    top: 40%;
+    right: 10%;
+    animation-delay: 0.6s;
+}
+
+/* Premium Border Glow on Hover */
+.day-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-2xl);
+    padding: 2px;
+    background: linear-gradient(135deg, var(--rose-light), var(--rose), var(--rose-deep));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-romantic);
+}
+
+.day-card:hover::after {
+    opacity: 0.6;
+}
+
+/* Locked Card Overlay */
+.card-locked-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 30%, rgba(255, 240, 243, 0.5) 100%);
+    pointer-events: none;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .card-content {
+        padding: var(--space-lg);
+        min-height: 200px;
+    }
+
+    .card-emoji {
+        font-size: 3rem;
+    }
+
+    .card-name {
+        font-size: 1.3rem;
+    }
+}
+
+/* Card Themes */
+.day-card[data-theme="rose"] .card-gradient {
+    background: var(--gradient-rose);
+}
+
+.day-card[data-theme="propose"] .card-gradient {
+    background: var(--gradient-night);
+}
+
+.day-card[data-theme="chocolate"] .card-gradient {
+    background: var(--gradient-chocolate);
+}
+
+.day-card[data-theme="teddy"] .card-gradient {
+    background: var(--gradient-pastel);
+}
+
+.day-card[data-theme="promise"] .card-gradient {
+    background: var(--gradient-gold);
+}
+
+.day-card[data-theme="hug"] .card-gradient {
+    background: var(--gradient-warmth);
+}
+
+.day-card[data-theme="kiss"] .card-gradient {
+    background: var(--gradient-love);
+}
+
+.day-card[data-theme="valentine"] .card-gradient {
+    background: var(--gradient-valentine);
+}

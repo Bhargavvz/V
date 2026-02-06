@@ -1,0 +1,306 @@
+/* Propose Day - Romantic & Elegant */
+
+/* Fireworks */
+.fireworks-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    font-size: 2rem;
+    filter: drop-shadow(0 0 10px rgba(255, 200, 87, 0.8));
+}
+
+/* Container */
+.propose-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    width: 100%;
+    padding: var(--space-lg) 0;
+}
+
+/* Envelope */
+.envelope-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.envelope-intro {
+    font-family: var(--font-script);
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: var(--space-2xl);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.envelope {
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-romantic);
+}
+
+.envelope-body {
+    width: 200px;
+    height: 140px;
+    background: linear-gradient(145deg, #f5e6d3, #e8d5c4);
+    border-radius: var(--radius-md);
+    position: relative;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.2),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: linear-gradient(145deg, #efe0d1, #ddd0c0);
+    clip-path: polygon(0 0, 50% 70px, 100% 0);
+    transform-origin: top;
+    transition: transform 0.5s ease;
+}
+
+.envelope:hover .envelope-flap {
+    transform: rotateX(-30deg);
+}
+
+.envelope-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+.envelope-hint {
+    margin-top: var(--space-lg);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Letter */
+.letter-container {
+    width: 100%;
+    max-width: 550px;
+    perspective: 1000px;
+}
+
+.letter-paper {
+    background: linear-gradient(165deg,
+            #fffef9 0%,
+            #fff9f0 30%,
+            #fff5eb 60%,
+            #fff2e6 100%);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-love);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.letter-icon {
+    font-size: 3rem;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+.letter-body {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--dark);
+    white-space: pre-wrap;
+    min-height: 300px;
+}
+
+.letter-text {
+    margin: 0;
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: var(--rose);
+    animation: blink 0.8s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.skip-button {
+    display: block;
+    margin: var(--space-lg) auto 0;
+    padding: var(--space-sm) var(--space-md);
+    background: transparent;
+    color: var(--rose-dark);
+    font-size: 0.9rem;
+    border: 1px solid var(--rose-light);
+    border-radius: var(--radius-full);
+    opacity: 0.7;
+    transition: all var(--duration-normal) var(--ease-romantic);
+}
+
+.skip-button:hover {
+    opacity: 1;
+    background: rgba(255, 143, 171, 0.1);
+}
+
+/* Response Section */
+.response-section {
+    text-align: center;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.response-prompt {
+    font-family: var(--font-script);
+    font-size: 1.3rem;
+    color: var(--rose-dark);
+    margin-bottom: var(--space-lg);
+}
+
+.accept-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-2xl);
+    background: var(--gradient-love);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    box-shadow: 0 8px 30px rgba(255, 77, 109, 0.4);
+    transition: all var(--duration-normal) var(--ease-romantic);
+}
+
+.accept-button:hover {
+    box-shadow: 0 12px 40px rgba(255, 77, 109, 0.5);
+}
+
+/* Accepted State */
+.accepted-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-2xl);
+}
+
+.accepted-ring {
+    font-size: 6rem;
+    margin-bottom: var(--space-xl);
+    filter: drop-shadow(0 0 30px rgba(255, 200, 87, 0.6));
+}
+
+.accepted-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.accepted-subtitle {
+    font-family: var(--font-script);
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-2xl);
+}
+
+.accepted-message {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    padding: var(--space-xl);
+    border-radius: var(--radius-xl);
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.accepted-message p {
+    font-size: 1.1rem;
+    color: white;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.accepted-message .signature {
+    font-family: var(--font-script);
+    font-size: 1.4rem;
+    margin-top: var(--space-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accepted-hearts {
+    font-size: 2rem;
+    margin-top: var(--space-2xl);
+    letter-spacing: 0.3em;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .envelope-body {
+        width: 160px;
+        height: 110px;
+    }
+
+    .envelope-heart {
+        font-size: 2.5rem;
+    }
+
+    .letter-paper {
+        padding: var(--space-xl);
+    }
+
+    .letter-body {
+        font-size: 0.95rem;
+        min-height: 250px;
+    }
+
+    .accepted-ring {
+        font-size: 4rem;
+    }
+
+    .accepted-title {
+        font-size: 2rem;
+    }
+}
