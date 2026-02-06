@@ -68,12 +68,12 @@ Bhargav 💕`;
 
 // Photo gallery - real photos
 const GALLERY_ITEMS = [
-    { src: '/public/images/1.jpeg', date: "December 23, 2025", label: "Golkonda Fort" },
-    { src: '/public/images/2.jpeg', date: "January 12, 2025", label: "Numaish Night" },
-    { src: '/public/images/3.jpeg', date: "July 2, 2025", label: "Yadagirigutta" },
-    { src: '/public/images/4.jpeg', date: "December 16, 2025", label: "Our first anniversary" },
-    { src: '/public/images/5.jpeg', date: "June 7, 2025", label: "My Birthday" },
-    { src: '/public/images/6.jpeg', date: "April 4, 2025", label: "Our Outing" },
+    { src: 'images/1.jpeg', date: "December 23, 2025", label: "Golkonda Fort" },
+    { src: 'images/2.jpeg', date: "January 12, 2025", label: "Numaish Night" },
+    { src: 'images/3.jpeg', date: "July 2, 2025", label: "Yadagirigutta" },
+    { src: 'images/4.jpeg', date: "December 16, 2025", label: "Our first anniversary" },
+    { src: 'images/5.jpeg', date: "June 7, 2025", label: "My Birthday" },
+    { src: 'images/6.jpeg', date: "April 4, 2025", label: "Our Outing" },
 ];
 
 // Relationship start date
